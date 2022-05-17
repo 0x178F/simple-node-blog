@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<%-include('./static/header')%>
+
+<body class="ss-bg-white">
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div id="top" class="s-wrap site-wrapper">
+
+        <%-include ('./static/side-bar')  %>
+
+
+        <!-- site content
+        ================================================== -->
+        <div class="s-content content">
+            <main class="row content__page">
+
+                <article class="column large-full entry format-standard">
+
+                    <div class="media-wrap entry__media">
+                        <div class="entry__post-thumb">
+                            <img src="/uploads/<%= getPost.post_image %>" srcset="/uploads/<%= getPost.post_image %> 2000w, 
+                                        /uploads/<%= getPost.post_image %> 1000w, 
+                                        /uploads/<%= getPost.post_image %> 500w"
+                                sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+                        </div>
+                    </div>
+
+                    <div class="content__page-header entry__header">
+                        <h1 class="display-1 entry__title">
+                            <%= getPost.title %>
+                        </h1>
+                        <ul class="entry__header-meta">
+                            <li class="author">By <a href="#0"><%= getPost.author.username %> </a></li>
+                            <li class="date"><%= getPost.date.toDateString().split(' ').slice(1).join(' ') %></li>
+                            <li class="cat-links">
+                                <a href="/category/<%= getPost.category.id %>"><%= getPost.category.name %> </a>
+                            </li>
+                        </ul>
+                    </div> <!-- end entry__header -->
+
+                    <div class="entry__content">
+
+                        <p class="lead drop-cap">
+                            <%= getPost.content %>
+                        </p>
+                    </div>
+                    <!-- end entry content -->
+                </article> <!-- end column large-full entry-->
+            </main>
+        </div> <!-- end s-content -->
+    </div> <!-- end s-wrap -->
+    <%-include ('./static/footer')  %>
+</body>

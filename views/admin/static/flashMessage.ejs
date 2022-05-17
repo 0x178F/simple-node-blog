@@ -1,0 +1,11 @@
+<% if (locals.message) { %>
+<% if (locals.message.success) { %>
+    <div class="alert alert-success" role="alert">
+        <%= locals.message.success %> 
+      </div>
+<% } else { %>
+    <div class="alert alert-danger" role="alert">
+        <%= locals.message.error %> 
+      </div>
+<% } %>
+<% } %>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<%- include('./static/header') %>
+
+<body class="ss-bg-white">
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div id="top" class="s-wrap site-wrapper">
+
+
+        <%- include('./static/side-bar') %>
+
+
+        <!-- site content
+        ================================================== -->
+        <div class="s-content content">
+            <main class="row content__page">
+
+                <section class="column large-full entry format-standard">
+
+                    <form name="registerForm" method="post" action="">
+                        <fieldset>
+
+                            <div class="form-field">
+                                <input name="username" class="full-width" placeholder="Username" type="text">
+                            </div>
+
+                            <div class="form-field">
+                                <input name="email" class="full-width" placeholder="Your Email" type="text">
+                            </div>
+
+                            <div class="form-field">
+                                <input name="phone" class="full-width" placeholder="Your Phone Number" type="text">
+                            </div>
+
+                            <div class="form-field">
+                                <input name="password" class="full-width" placeholder="Your Password" type="password">
+                            </div>
+
+                            <input id="submit" class="btn btn--primary btn-wide btn--large full-width" value="Register" type="submit">
+
+                        </fieldset>
+                    </form> <!-- end form -->
+
+                </section>
+
+            </main>
+
+        </div> <!-- end s-content -->
+
+
+        <%-include('./static/footer') %>
+
+</body>

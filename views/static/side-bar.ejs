@@ -1,0 +1,85 @@
+        <!-- site header
+        ================================================== -->
+        <header class="s-header">
+            <% if(locals.user) { %>
+            <strong class="isLogin">
+               Welcome <%= locals.user.username %>.
+            </strong>
+            <% } %>
+            <div class="header__top">
+                <div class="header__logo">
+                    <a class="site-logo" href="/">
+                        <img src="/images/logo.svg" alt="Homepage">
+                    </a>
+                </div>
+
+                <div class="header__search">
+
+                    <form role="search" method="get" class="header__search-form" action="/search">
+                        <label>
+                            <span class="hide-content">Search for:</span>
+                            <input type="search" name="search" class="header__search-field" placeholder="Type Keywords" value=""
+                                name="s" title="Search for:" autocomplete="off">
+                        </label>
+                        <input type="submit" class="header__search-submit" value="Search">
+                    </form>
+
+                    <a href="#0" title="Close Search" class="header__search-close">Close</a>
+
+                </div> <!-- end header__search -->
+
+                <!-- toggles -->
+                <a href="#0" class="header__search-trigger"></a>
+                <a href="#0" class="header__menu-toggle"><span>Menu</span></a>
+
+            </div> <!-- end header__top -->
+
+            <nav class="header__nav-wrap">
+
+                <ul class="header__nav">
+                    <li class="current"><a href="/" title="">Home</a></li>
+                    <li class="has-children">
+                        <a href="#0" title="">Categories</a>
+                        <ul class="sub-menu">
+                            <% locals.categories.forEach(category => { %>
+                            <li><a href="/category/<%= category._id %> "><%= category.name %> </a></li>
+                            <% }) %>
+                        </ul>
+                    </li>
+                    <li><a href="/contact" title="">Contact</a></li>
+                    <% if (locals.user) { %>
+                        <li><a href="/logout" title="">Logout</a></li>
+                    <% } else { %>
+                        <li><a href="/login" title="">Login</a></li>
+                        <li><a href="/register" title="">Register</a></li> 
+                    <% } %>
+                </ul> <!-- end header__nav -->
+
+                <ul class="header__social">
+                    <li class="ss-facebook">
+                        <a href="<%= locals.settings.facebook %>">
+                            <span class="screen-reader-text">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="ss-twitter">
+                        <a href="<%= locals.settings.twitter %>">
+                            <span class="screen-reader-text">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="ss-dribbble">
+                        <a href="<%= locals.settings.dribbble %>">
+                            <span class="screen-reader-text">Dribbble</span>
+                        </a>
+                    </li>
+                    <li class="ss-pinterest">
+                        <a href="<%= locals.settings.pinterest %>">
+                            <span class="screen-reader-text">Pinterest</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav> <!-- end header__nav-wrap -->
+
+
+
+        </header> <!-- end s-header -->

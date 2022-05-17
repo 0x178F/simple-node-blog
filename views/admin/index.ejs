@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./static/header') %>
+<body>
+  <div class="container-scroller">
+    <%- include('./static/nav-bar') %>
+    <div class="container-fluid page-body-wrapper">
+      <%- include('./static/side-bar') %>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <%- include('./static/flashMessage') %>
+              <div class="card-body">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <%- include('./static/footer') %>
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <%- include('./static/plugin') %>
+</body>
+
+</html>

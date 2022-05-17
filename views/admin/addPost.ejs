@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./static/header') %>
+
+<body>
+  <div class="container-scroller">
+    <%- include('./static/nav-bar') %>
+    <div class="container-fluid page-body-wrapper">
+      <%- include('./static/side-bar') %>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <%- include('./static/flashMessage') %>
+              <div class="card-body">
+                <h4 class="card-title">Add Post</h4>
+                <form action="" method="post" enctype="multipart/form-data">
+                  <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+                  </div>
+                  <div class="form-group">
+                    <label for="content">Textarea</label>
+                    <textarea name="content" class="form-control" id="content" rows="4"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="category">Category</label>
+                    <select name="category" class="form-control" id="category">
+                      <option selected>Select Category</option>
+                      <% locals.categories.forEach(category => { %>
+                      <option value="<%= category._id %>"><%= category.name %></option>
+                      <% }) %>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="upload_image">Post Image</label><br>
+                    <input type="file" class="form-control-file" id="upload_image" name="post_image">
+                  </div>
+                  <button type="submit" class="btn btn-primary me-2">Add Post</button>
+                </form>
+
+
+                  
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <%- include('./static/footer') %>
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <%- include('./static/plugin') %>
+</body>
+
+</html>

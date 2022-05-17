@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./static/header') %>
+
+<body>
+  <div class="container-scroller">
+    <%- include('./static/nav-bar') %>
+    <div class="container-fluid page-body-wrapper">
+      <%- include('./static/side-bar') %>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <%- include('./static/flashMessage') %>
+              <div class="card-body">
+                <h4 class="card-title">Posts</h4>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Post Title</th>
+                      <th>Category Name</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <% postData.forEach(post => { %>
+                  <tbody>
+                    <tr>
+                      <td><%= post._id %></td>
+                      <td><%= post.title %></td>
+                      <td><%= post.category.name %></td>
+                      <form action="posts/<%= post._id %>" method="get">
+                        <td>
+                          <button type="submit" class="btn btn-dark">Edit</button>
+                        </td>
+                      </form>
+
+                      <form action="" method="post">
+                        <td>
+                          <input type="hidden" name="_id" value="<%= post._id %>">
+                          <button type="submit" class="btn btn-danger">Delete</button>
+                        </td>
+                      </form>
+                    </tr>
+                  </tbody>
+                  <% }) %>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <%- include('./static/footer') %>
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <%- include('./static/plugin') %>
+</body>
+
+</html>

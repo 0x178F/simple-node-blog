@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./static/header') %>
+
+<body>
+    <div class="container-scroller">
+        <%- include('./static/nav-bar') %>
+        <div class="container-fluid page-body-wrapper">
+            <%- include('./static/side-bar') %>
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <%- include('./static/flashMessage') %>
+                            <div class="card-body">
+                                <h4 class="card-title">Settings</h4>
+                                <form class="forms-sample" action="" method="post">
+                                    <div class="form-group row">
+                                        <label for="name" class="col-sm-3 col-form-label">Web Page Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="name" class="form-control" id="name"
+                                                placeholder="Web Page Name" value="<%= config.name %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="title" class="col-sm-3 col-form-label">Title</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="title" class="form-control" id="title"
+                                                placeholder="Title" value="<%= config.title %>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="facebook" class="col-sm-3 col-form-label">Facebook</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="facebook" class="form-control" id="facebook"
+                                                placeholder="Facebook" value="<%= config.facebook %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="twitter" class="col-sm-3 col-form-label">Twitter</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="twitter" class="form-control" id="twitter"
+                                                placeholder="Twitter" value="<%= config.twitter %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="dribbble" class="col-sm-3 col-form-label">Dribbble</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="dribbble" class="form-control" id="dribbble"
+                                                placeholder="Dribbble" value="<%= config.dribbble %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="pinterest" class="col-sm-3 col-form-label">Pinterest</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="pinterest" class="form-control" id="pinterest"
+                                                placeholder="Pinterest" value="<%= config.pinterest %>">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary me-2">Save</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <%- include('./static/footer') %>
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <%- include('./static/plugin') %>
+</body>
+
+</html>
